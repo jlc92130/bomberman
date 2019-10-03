@@ -5,7 +5,6 @@ var blastBottom = document.getElementById("blastBottom");
 var blastLeft = document.getElementById("blastRight");
 var blastRight = document.getElementById("blastLeft");
 var limitBomb = false;
-console.log("dfgdf");
 var enemy0 = document.getElementById("enemy0");
 var enemy0Top = enemy0.offsetTop;
 var enemy0Left = enemy0.offsetLeft;
