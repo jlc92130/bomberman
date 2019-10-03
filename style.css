@@ -1,0 +1,43 @@
+#boardgame{
+  height: 800px;
+  width: 800px;
+  background-color: black;
+  position:relative;
+
+ }
+ #player{
+   height: 22px;
+   width: 32px;
+   background-color: green;
+   position:absolute;
+
+  }
+  #bomb {
+    height: 32px;
+    width: 32px;
+    background-color: orange;
+    position: absolute;
+    display: none;
+    z-index: 4;
+    border-radius: 75%;
+  }
+
+  .blast {
+  height: 32px;
+  width: 32px;
+  background-color: red;
+  position: absolute;
+  display: none;
+  z-index: 5;
+}
+
+
+
+.enemies {
+  height: 32px;
+  width: 32px;
+  background-color: blue;
+  position: absolute;
+  z-index:3px;
+  border-radius: 50%;
+}
