@@ -1,34 +1,33 @@
-
 var bomb = document.getElementById("bomb");
-var limitBomb = false;
+var blastCenter = document.getElementById("blastCenter");
 var blastTop = document.getElementById("blastTop");
-var blastLeft =  document.getElementById("blastLeft");
-var blastRight =  document.getElementById("blastRight");
-var blastBottom =  document.getElementById("blastBottom");
-var blastCenter =  document.getElementById("blastCenter");
-var ene
+var blastBottom = document.getElementById("blastBottom");
+var blastLeft = document.getElementById("blastRight");
+var blastRight = document.getElementById("blastLeft");
+var limitBomb = false;
+console.log("dfgdf");
+var enemy0 = document.getElementById("enemy0");
+var enemy0Top = enemy0.offsetTop;
+var enemy0Left = enemy0.offsetLeft;
 
-
-document.addEventListener("keydown",dropBomb);
-
-
+document.addEventListener("keydown", dropBomb);
 
 function dropBomb(event) {
-var keyCode = event.keyCode;
-if (keyCode == 32) {
-  if (limitBomb == false) {
-    limitBomb = true;
-    bomb.style.display = "block";
-    bomb.style.top = positionTop + "px";
-    bomb.style.left = positionLeft + "px";
-    setTimeout(bombBlast, 3000);
-    setTimeout(bombExplosion, 3000);
-    setTimeout(blastDisparition, 4000);
+  var keyCode = event.keyCode;
+  if (keyCode == 32) {
+    if (limitBomb == false) {
+      limitBomb = true;
+      bomb.style.display = "block";
+      bomb.style.top = positionTop + "px";
+      bomb.style.left = positionLeft + "px";
+      setTimeout(bombBlast, 3000);
+      setTimeout(bombExplosion, 3000);
+      setTimeout(blastDisparition, 4000);
+    }
   }
 }
-}
 
-function bombExplosion() {         // disparition de la bombe au bout de 3s
+function bombExplosion() {
   bomb.style.display = "none";
   limitBomb = false;
 }
@@ -37,15 +36,12 @@ function bombBlast() {
   blastCenter.style.display = "block";
   blastCenter.style.top = bomb.offsetTop + "px";
   blastCenter.style.left = bomb.offsetLeft + "px";
-    if (bomb.offsetTop == positionTop && bomb.offsetLeft == positionLeft){
+  if (bomb.offsetTop == positionTop && bomb.offsetLeft == positionLeft){
     player.style.display = "none";
     modal.style.display = "block";
-
   }
-    if (bomb.offsetTop == enemy0TopTop && bomb.offsetLeft == enemy0Left){
-    player.style.display = "none";
-
-
+  if (bomb.offsetTop == enemy0Top && bomb.offsetLeft == enemy0Left){
+    enemy0.style.display = "none";
   }
 
   blastTop.style.display = "block";
@@ -86,12 +82,10 @@ function bombBlast() {
 
 }
 
-
 function blastDisparition() {
   blastCenter.style.display = "none";
   blastTop.style.display = "none";
   blastBottom.style.display = "none";
   blastLeft.style.display = "none";
   blastRight.style.display = "none";
-
 }
